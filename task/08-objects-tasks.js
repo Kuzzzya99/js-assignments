@@ -26,9 +26,10 @@ function Rectangle(width, height) {
 var r = {};
 r.width = width;
 r.height = height;
-r.getArea(){
-    return width*height;
-  }
+function getArea() {
+  return width*height;
+}
+r.getArea = getArea;
 return r;
 }
 

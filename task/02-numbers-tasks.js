@@ -35,7 +35,7 @@ var a=y1*x1+y2*x2;
 var x=Math.sqrt(Math.pow(x1, 2)+Math.pow(x2, 2)); 
 var y=Math.sqrt(Math.pow(y1, 2)+Math.pow(y2, 2)); 
 var z=x*y; 
-return Math.cos((a/z)); 
+return Math.round(Math.cos(a/z)); 
 
 } 
 

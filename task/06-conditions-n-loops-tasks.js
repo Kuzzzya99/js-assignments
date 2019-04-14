@@ -74,7 +74,7 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-for (var i=n1-1; i<n2; i++) { 
+for (var i=n1; i<n2+1; i++) { 
     var sum=sum+n1; 
     } 
     return (sum);
@@ -136,6 +136,7 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
+     throw new Error('Not implemented');
    }
 
 
