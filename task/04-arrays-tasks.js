@@ -1,61 +1,87 @@
 'use strict';
 
-/*********************************************************************************************
- *                                                                                           *
- * Plese read the following tutorial before implementing tasks:                              *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array    *
- *                                                                                           *
- * NOTE : Please do not use loops! All tasks can be implmeneted using standard Array methods *
- *                                                                                           *
- *********************************************************************************************/
-
- 
-/**
- * Returns an index of the specified element in array or -1 if element is not found
- * 
- * @param {array} arr
- * @param {any} value
- * @return {number}
- * 
- * @example
- *    ['Ace', 10, true], 10    => 1 
- *    ['Array', 'Number', 'string'], 'Date'    => -1 
- *    [0, 1, 2, 3, 4, 5], 5    => 5
- */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+  for(var i=0; i< arr.length; i++){
+    if(arr[i].equals(value)){
+      return i;
+    }
+  }
+  return -1;
 }
 
-/**
- * Generates an array of odd numbers of the specified length
- * 
- * @param {number} len
- * @return {array}
- * 
- * @example
- *    1 => [ 1 ] 
- *    2 => [ 1, 3 ] 
- *    5 => [ 1, 3, 5, 7, 9 ]
- */
 function generateOdds(len) {
-   throw new Error('Not implemented');
+  var count =0;
+  for(var i=0; i< len; i++){
+    newArr[i]= i+count+1;
+    count++;
+  }
+  return newArr;
 }
 
-
-/**
- * Returns the doubled array - elements of the specified array are repeated twice using original order
- * 
- * @param {array} arr
- * @return {array}
- * 
- * @example
- *    ['Ace', 10, true]  => ['Ace', 10, true,   'Ace', 10, true]  
- *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
- *    [] => [] 
- */
 function doubleArray(arr) {
-   throw new Error('Not implemented');
+  newArr = arr;
+  for(var i=0; i<arr.length; i++){
+    newArr[arr.length+i] =arr[i];
+  }
+  return newArr;
 }
+
+function getArrayOfPositives(arr) {S
+  var count=0;
+  for(var i=0; i<arr.length; i++){
+    if(arr[i]>0){
+      newArr[count++]= arr[i];
+    }
+  }
+  return newArr;
+}
+
+function getArrayOfStrings(arr) {
+  var count =0;
+  for(var i=0; i<arr.length; i++){
+    if(typeof(arr[i]).equals("string")){
+    newArr[count++]=arr[i];
+  }
+  return newArr;
+}
+
+function removeFalsyValues(arr) {
+  var count=0;
+  for(var i=0; i< arr.length; i++){
+    if(arr[i]!=0 && arr[i]!= null && arr[i]!=false && !arr[i].equals('') && !arr[i].isNaN && !typeof(arr[i]=="undefined")){
+      newArr[count++] = arr[i];
+    }
+  }
+  return newArr;
+}
+
+function getUpperCaseStrings(arr) {
+  for(var i=0; i<arr.length; i++){
+    arr[i].toUpperCase();
+  }
+  return arr[i];
+}
+
+function getStringsLength(arr) {
+  for(var i=0; i< arr.length; i++){
+    if(!arr[i].equals('')){
+      newArr[i]=arr[i].length;
+    }
+    else{
+      newArr[i]=0;
+    }
+    
+  } 
+ 
+}
+
+
+
+
+
+
+
+
 
 
 /**
@@ -69,9 +95,7 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => [] 
  */
-function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
-}
+
 
 /**
  * Returns the array with strings only in the specified array (in original order)
@@ -85,7 +109,11 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+  var count =0;
+  for(var i=0; i<arr.length; i++){
+    if(typeof(arr[i]).equals("string")){
+    newArr[count++]=arr[i];
+  }
 }
 
 /**
@@ -101,9 +129,7 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
-}
+
 
 /**
  * Returns the array of useprcase strings from the specified array
@@ -115,9 +141,7 @@ function removeFalsyValues(arr) {
  *    [ 'permanent-internship', 'glutinous-shriek', 'multiplicative-elevation' ] => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ]
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(arr) {
-   throw new Error('Not implemented');
-}
+
 
 
 /**
@@ -130,9 +154,7 @@ function getUpperCaseStrings(arr) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(arr) {
-   throw new Error('Not implemented');
-}
+
 
 /**
  * Inserts the item into specified array at specified index
@@ -175,7 +197,11 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-   throw new Error('Not implemented');
+  var count= 0;
+  for(var i=n; i<arr.length; i++){
+    newArr[count++] = arr[i];
+  }
+  return newArr;
 }
 
 
@@ -401,7 +427,7 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Moscow' },
  *      { country: 'Belarus', city: 'Minsk' },
  *      { country: 'Poland',  city: 'Warsaw' },
- *      { country: 'Russia',  city: 'Saint Petersburg' },
+ *      { country: 'Russia',  city: 'Savar Petersburg' },
  *      { country: 'Poland',  city: 'Krakow' },
  *      { country: 'Belarus', city: 'Brest' }
  *    ]  
@@ -412,7 +438,7 @@ function toStringList(arr) {
  *      { country: 'Poland',  city: 'Krakow' },
  *      { country: 'Poland',  city: 'Warsaw' },
  *      { country: 'Russia',  city: 'Moscow' },
- *      { country: 'Russia',  city: 'Saint Petersburg' }
+ *      { country: 'Russia',  city: 'Savar Petersburg' }
  */
 function sortCitiesArray(arr) {
    throw new Error('Not implemented');
