@@ -80,7 +80,7 @@ function getUpperCaseStrings(arr) {
 function getStringsLength(arr) {
    var newArr=[];
   for(var i=0; i< arr.length; i++){
-    if(!arr[i].equals('')){
+    if(!arr[i]===''){
       
       newArr[i]=arr[i].length;
     }
@@ -102,7 +102,7 @@ function getHead(arr, n) {
 function getTail(arr, n) {
   var count= 0;
   var newArr=[];
-  for(var i=n; i<arr.length; i++){
+  for(var i=n-1; i<arr.length; i++){
     newArr[count++] = arr[i];
   }
   return newArr;
